@@ -28,7 +28,7 @@ const deleteElement = (id) => {
 }
 
 const createCard = ({title, details, id}) => {
-    const app = document.getElementsByClassName('titles')[0];
+    const app = document.getElementsByClassName('cards')[0];
     const card = document.createElement('div');
 
     // set id
@@ -36,9 +36,9 @@ const createCard = ({title, details, id}) => {
 
     card.innerHTML = `
         <div class="title">
-            <h2> ${title} </h2>
-            <span class="close">X</span> 
-            <p> ${details} </p>
+            <h2 contenteditable="true"> ${title} </h2>
+            <span class="close">✖️</span> 
+            <p contenteditable="true"> ${details} </p>
         </div>
     `;
     // add event listener to the close button
@@ -57,6 +57,18 @@ const createCard = ({title, details, id}) => {
 
             console.log(elements);
     });
+
+    card.addEventListener("input", () => {
+        const title = card.getElementsByTagName('h2')[0].innerText;
+        const details = card.getElementsByTagName('p')[0].innerText;
+        const id = card.getAttribute('id');
+        const index = elements.findIndex(element => element.id === id);
+        if (index !== -1) {     
+            elements[index].title = title;
+            elements[index].details = details;
+        }
+        updateLocalStorage();
+    }, false);
 
     app.appendChild(card);
 }
