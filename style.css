@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
 }
 
-.project-input-form input, .project-input-form textarea {
+.title-input-form input, .title-input-form textarea {
   background-color: #fff;
   color: #454545;
   padding: 4%;
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   display: block;
 }
-.project-input-form .submit {
+.title-input-form .submit {
   background-color: #00afec;
   color: #fff;
   width: 100%;
@@ -61,12 +61,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
-.projects {
+.titles {
   width: 73%;
   float: right;
 }
 
-.project {
+.title {
   width: 45%;
   margin-right: 5%;
   padding: 2%;
@@ -79,10 +79,10 @@ h1, h2, h3, h4, h5, h6 {
   -moz-box-shadow: 0 2px 5px 0 rgba(10, 10, 10, 0.1);
   box-shadow: 0 2px 5px 0 rgba(10, 10, 10, 0.1);
 }
-.project:nth-child(2n+2) {
+.title:nth-child(2n+2) {
   margin-right: 0;
 }
-.project:last-child {
+.title:last-child {
   margin-bottom: 0;
 }
 
