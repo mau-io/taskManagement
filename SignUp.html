@@ -47,35 +47,43 @@
 
 <body>
     <div class="signup-form">
-        <form action="#" method="post">
-            <h2 class="text-center">Sign Up</h2>
-            <div class="form-group">
-                <input type="text" class="form-control" name="userName" placeholder="Username" required="required">
-            </div>
-            <div class="form-group">
 
-                <input type="email" class="form-control" name="emailAdd" placeholder="Email Address"
-                    required="required">
-            </div>
+        <h2 class="text-center">Sign Up</h2>
+        <div class="form-group">
+            <input type="text" class="form-control" name="userName" id="username" placeholder="Username"
+                required="required">
+        </div>
 
-            <div class="form-group">
+        <div class="form-group">
+            <input type="password" id="password" class="form-control" name="myPass" placeholder="Password" required="required">
+        </div>
 
-                <input type="password" class="form-control" name="myPass" placeholder="Password" required="required">
-            </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="confPass" placeholder="Confirm Password"
+                required="required">
+        </div>
+        <div class="form-group">
+            <button type="submit" id="signup" class="btn btn-primary btn-block" formaction="#">Sign Up</button>
+        </div>
+        <div class="clearfix">
+            <a href="./login.html" class="float-right">Already have an account?</a>
+        </div>
 
-            <div class="form-group">
-                <input type="password" class="form-control" name="confPass" placeholder="Confirm Password"
-                    required="required">
-            </div>
-            <div class="form-group">
-                <button type="submit" value="signup" class="btn btn-primary btn-block" formaction="#">Sign Up</button>
-            </div>
-            <div class="clearfix">
-                <a href="./Login.html" class="float-right">Already have an account?</a>
-            </div>
-        </form>
     </div>
-    <script src="script.js"></script>
+    <script>
+        const signup = document.getElementById('signup');
+
+        signup.addEventListener('click', () => {
+            // add user to localStorage
+            const user = {
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value
+            };
+
+            localStorage.setItem('user', JSON.stringify(user));
+            window.location.href = 'login.html';
+        })
+    </script>
 </body>
 
 </html>

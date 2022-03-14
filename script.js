@@ -123,3 +123,9 @@ button.addEventListener('click', (e) => {
 for(element of elements) {
     createCard(element);
 }
+
+const logout = document.getElementById('logout');
+
+logout.addEventListener('click', () => {
+    window.location.href = 'login.html';
+})
